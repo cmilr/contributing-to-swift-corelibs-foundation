@@ -8,13 +8,17 @@ First, download and install:
 
 Then:
 * Boot the latest version of **Xcode**.
-* Enable the correct **toolchain** in **Xcode > Preferences > Components**.
+* Enable the correct **toolchain** (titled: Swift Development Snapshot) in **Xcode > Preferences > Components**.
 
 Now:
 ```sh
+# Always update
 $ updateswift
-$ buildswift  // Preferably overnight
-// NOTE: see end of readme for the above two aliases, plus others I find useful
+
+# Build only if you've downloaded a new version of the Swift toolchain
+$ buildswift 
+
+# NOTE: see end of readme for the above two aliases, plus others I find useful
 ```
 Finally:
 
@@ -22,7 +26,14 @@ Finally:
 * Open **Foundation.xcworkspace**.
 * Build the **SwiftFoundation** target (this builds CoreFoundation and Foundation.)
 * Run the **TestFoundation** target (this builds CoreFoundation, Foundation, XCTest, and TestFoundation, then runs the tests.)
+* Don't be afraid to comment out any tests that cause errors.
 
+That's it!
+
+
+---
+## Aliases
+Below are some bash aliases I fund useful:
 ```sh
 alias cdswift="cd /Users/cmilr/Dev/Repos/swift-source/swift"
 alias selectxcode="sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer"
