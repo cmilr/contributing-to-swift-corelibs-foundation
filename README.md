@@ -14,6 +14,7 @@ Now:
 ```sh
 $ updateswift
 $ buildswift  // Preferably overnight
+// NOTE: see end of readme for the above two aliases, plus others I find useful
 ```
 Finally:
 
@@ -22,6 +23,13 @@ Finally:
 * Build the **SwiftFoundation** target (this builds CoreFoundation and Foundation.)
 * Run the **TestFoundation** target (this builds CoreFoundation, Foundation, XCTest, and TestFoundation, then runs the tests.)
 
-> Note: If you see the name of the XCTest project file in red in the workspace, then Xcode cannot find the cloned XCTest repository. Make sure that it is located next to the swift-corelibs-foundation directory and has the name swift-corelibs-xctest.
-
+```sh
+alias cdswift="cd /Users/cmilr/Dev/Repos/swift-source/swift"
+alias selectxcode="sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer"
+alias selectbeta="sudo xcode-select -switch /Applications/Xcode-beta.app/Contents/Developer"
+alias swifttest="${LLVM_SOURCE_ROOT}/utils/lit/lit.py -sv ${SWIFT_BUILD_DIR}/test-macosx-x86_64"
+alias swiftvaltest="${LLVM_SOURCE_ROOT}/utils/lit/lit.py -sv ${SWIFT_BUILD_DIR}/validation-test-macosx-x86_64"
+alias updateswift="selectbeta; cdswift; utils/update-checkout --clone-with-ssh"
+alias buildswift="selectbeta; cdswift; utils/build-script --release-debuginfo"
+```
 
