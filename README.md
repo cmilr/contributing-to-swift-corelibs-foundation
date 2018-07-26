@@ -1,44 +1,27 @@
-# Product Name
+# Notes on: Swift CoreLibs Foundation
 
-One to two paragraph statement about your product and what it does.
+## macOS Development Setup
 
-![](screenshot.png)
+First, download and install:
+* [The latest version of Xcode](https://developer.apple.com/download/)
+* [The current version of the Swift toolchain](https://swift.org/download/#releases)
 
-## Installation
+Then:
+* Boot the latest version of **Xcode**.
+* Enable the correct **toolchain** in **Xcode > Preferences > Components**.
 
-OS X & Linux:
-
+Now:
 ```sh
-npm install my-crazy-module --save
+$ updateswift
+$ buildswift  // Preferably overnight
 ```
+Finally:
 
-Windows:
+* CD into **swift-source/swift-corelibs-foundation/**
+* Open **Foundation.xcworkspace**.
+* Build the **SwiftFoundation** target (this builds CoreFoundation and Foundation.)
+* Run the **TestFoundation** target (this builds CoreFoundation, Foundation, XCTest, and TestFoundation, then runs the tests.)
 
-```sh
-edit autoexec.bat
-```
+> Note: If you see the name of the XCTest project file in red in the workspace, then Xcode cannot find the cloned XCTest repository. Make sure that it is located next to the swift-corelibs-foundation directory and has the name swift-corelibs-xctest.
 
-## Usage example
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
-
-## Development setup
-
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-```sh
-make install
-npm test
-```
-
-## Questions? Drop me a line!
-
-### Contact
-- Email: cary@cmillerco.com
-- Twitter: [@cmillerco](https://twitter.com/cmillerco)
-- GitHub: [cmilr](https://github.com/cmilr/)
-
-### License
-Distributed under the MIT license. See ``LICENSE`` for more information.
-
-# Thanks for stopping by!
